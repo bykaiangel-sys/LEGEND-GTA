@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://alhharptest.netlify.app/ -->
+<html lang="uk"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=caf359ed-0c34-4fa0-8507-6ef68f0f0fbd
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVENTI GTA — Гра про Україну</title>
+    <link rel="icon" type="image/webp" href="./KVENTI GTA — Гра про Україну_files/logo.webp">
+    
+    <meta name="description" content="Найбільший RP-проєкт з атмосферою українських міст. Унікальна економіка, фракції та безліч можливостей.">
+    <meta name="keywords" content="Krutow RP, MTA SA, GTA San Andreas, RP сервер, roleplay, Україна">
+    
+    <meta property="og:title" content="KVENTI GTA — Гра про Україну">
+    <meta property="og:description" content="Найбільший RP-проєкт з атмосферою українських міст">
+    <meta property="og:url" content="https://krutow-rp.pp.ua">
+    
+    <link rel="stylesheet" href="./KVENTI GTA — Гра про Україну_files/main9.css">
+    <link rel="stylesheet" href="./KVENTI GTA — Гра про Україну_files/main_v_4.css">
+    <link rel="stylesheet" href="./KVENTI GTA — Гра про Україну_files/fm.revealator.jquery_v_4.css">
+    <link href="./KVENTI GTA — Гра про Україну_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./KVENTI GTA — Гра про Україну_files/all.min.css">
+
+    <style>
+        .hero {
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-content.hero-centered {
+            position: relative;
+            z-index: 5;
+        }
+        .server-monitor {
+            margin: 0 auto 22px;
+            width: 100%;
+            max-width: 560px;
+            padding: 14px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: linear-gradient(180deg, rgba(22, 24, 30, 0.92) 0%, rgba(10, 11, 15, 0.92) 100%);
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+        }
+        .server-monitor__title {
+            margin: 0 0 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #f2f4fb;
+            opacity: 0.95;
+        }
+        .server-monitor__item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .server-monitor__left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: #f8f9fc;
+        }
+        .server-monitor__dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #8f95a3;
+            box-shadow: 0 0 8px rgba(143, 149, 163, 0.7);
+        }
+        .server-monitor__dot.online {
+            background: #16c172;
+            box-shadow: 0 0 10px rgba(22, 193, 114, 0.9);
+        }
+        .server-monitor__count--offline {
+            color: #aeb8ce;
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.08);
+            font-weight: 600;
+        }
+        .hero-players-pill__dot.is-offline {
+            background: #8f95a3;
+            box-shadow: 0 0 8px rgba(143, 149, 163, 0.55);
+        }
+        .server-monitor__count {
+            font-weight: 700;
+            color: #ffffff;
+            background: rgba(30, 34, 44, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 13px;
+        }
+        .server-monitor__badge {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: #aeb8ce;
+            text-transform: uppercase;
+        }
+    </style>
+<style>
+    @keyframes float {
+        0% {
+            transform: translateY(0px) rotate(0deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
+    .particle {
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    @media (max-width: 768px) {
+        .nav.active {
+            display: flex;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: rgba(13, 13, 13, 0.98);
+            flex-direction: column;
+            padding: 20px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    }
+</style></head>
+<body class="at-top">
+    <div class="cursor" style="left: 758px; top: 0px;"></div>
+    <div class="cursor-follower" style="left: 755.425px; top: 22.6684px;"></div>
+
+    <div class="loading-screen" id="loadingScreen" style="opacity: 0; display: none;">
+        <div class="loading-particles" id="loadingParticles"></div>
+        <div class="loading-orbs">
+            <div class="loading-orb"></div>
+            <div class="loading-orb"></div>
+            <div class="loading-orb"></div>
+        </div>
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="logo-text">KVENTI</span><span class="logo-accent">GTA</span>
+            </div>
+            <div class="loading-subtitle">Гра про Україну</div>
+            <div class="loading-bar-container">
+                <div class="loading-bar">
+                    <div class="loading-progress" id="loadingProgress" style="width: 100%;"></div>
+                </div>
+                <div class="loading-percentage" id="loadingPercentage">100%</div>
+            </div>
+            <div class="loading-text" id="loadingText">Добро пожаловать!</div>
+            <div class="loading-tips">
+                <div class="loading-tip">💡 Порада: вивчи карту міста, щоб швидше орієнтуватися</div>
+                <div class="loading-tip active">🎯 Порада: обери професію до душі для кращого заробітку</div>
+                <div class="loading-tip">👥 Порада: приєднуйся до фракцій заради нових можливостей</div>
+                <div class="loading-tip">💰 Порада: інвестуй у нерухомість для пасивного доходу</div>
+                <div class="loading-tip">🏆 Порада: бері участь у турнірах за ексклюзивні нагороди</div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <nav class="nav" id="nav">
+                    <a href="https://alhharptest.netlify.app/#home" class="nav-link active">Головна</a>
+                    <a href="https://alhharptest.netlify.app/#about" class="nav-link">Форум</a>     
+                    <a href="https://iridescent-klepon-fb36c4.netlify.app/" class="nav-link" target="_blank" rel="noopener noreferrer">Ігровий магазин</a>
+                    <a href="https://alhharptest.netlify.app/#news" class="nav-link">Wiki</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="social-links">
+                        <a href="https://discord.gg/2j9t2tawa" target="_blank" rel="" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://t.me/+RKfmO0AhDxFiMTM6" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                    <a href="https://alhharptest.netlify.app/%D0%A1%D0%BA%D0%BE%D1%80%D0%BE" class="btn btn-outline"> Кабінет</a>
+                </div>
+                
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="pxl">
+            <div id="scene">
+                <div class="slide-main__bg" data-depth="0.2"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content hero-centered">
+                <div class="hero-head">
+
+
+                    <h1 class="hero-title">
+                        <span class="hero-title-brand">
+                            <span class="title-line">KVENTI</span><span class="title-line accent">GTA</span>
+                        </span>
+                        <span class="title-subtitle">Гра про Україну</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Поринь в атмосферу українських вулиць на проєкті KVENTI GTA.
+                        Унікальна економіка, безліч фракцій і нескінченні можливості для розвитку.
+                    </p>
+                </div>
+
+                <div class="hero-main-visual hero-main-visual--featured">
+                    <div class="hero-img-stack">
+                        <img src="./KVENTI GTA — Гра про Україну_files/main-img.png" alt="Krutow RP" class="hero-main-img" loading="eager">
+
+                        <div class="hero-under-img">
+                            <div class="hero-players-pill">
+                                <span class="hero-players-pill__dot is-offline" aria-hidden="true"></span>
+                                <span class="hero-players-pill__text"><strong>Сервер вимкнений</strong></span>
+                            </div>
+
+                            <div class="hero-actions custom-hero-actions hero-actions-below hero-actions-ugta">
+                                <a href="https://alhharptest.netlify.app/#download" class="btn-hero-cta btn-hero-cta--ugta">
+                                    <span class="btn-hero-cta__icon" aria-hidden="true"></span>
+                                    <span class="btn-hero-cta__text">Розпочати гру</span>
+                                </a>
+
+                                <a href="https://alhharptest.netlify.app/#about" class="btn-hero-secondary btn-hero-secondary--ugta">
+                                    <span class="btn-hero-secondary__icon-wrap" aria-hidden="true"><i class="fas fa-circle-info"></i></span>
+                                    <span class="btn-hero-secondary__text">Дізнатись більше</span>
+                                </a>
+                            </div>
+
+                            <p class="hero-platform-note">
+                                <i class="fab fa-windows" aria-hidden="true"></i>
+                                <span>Доступно тільки для Windows</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="server-monitor" id="serverMonitor">
+                <p class="server-monitor__title">Моніторинг серверів</p>
+                <div class="server-monitor__item">
+                    <div class="server-monitor__left">
+                        <span class="server-monitor__dot" id="server1Dot"></span>
+                        <span>Центральна україна</span>
+                        <span class="server-monitor__badge">MTA</span>
+                    </div>
+                    <span class="server-monitor__count server-monitor__count--offline" id="server1Online">Сервер вимкнений</span>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <div class="section-badge">Про проєкт</div>
+                <h2 class="section-title">Чому обирають KVENTI GTA</h2>
+                <p class="section-description">
+                    Ми створили унікальний ігровий всесвіт, де кожен знайде щось для себе
+                </p>
+            </div>
+            <section class="launcher-features">
+    <div class="container">
+        <div class="cards-grid">
+            
+            <div class="feature-card dark-card">
+                <div class="card-text">
+                    <h3>В нас на сервері ти також можеш стати<br>лідером клану<br> <span class="text-gray"></span></h3>
+                </div>
+                <div class="card-img-wrapper">
+                    <img src="./KVENTI GTA — Гра про Україну_files/guys.png" alt="GTA Mod" class="card-img">
+                </div>
+            </div>
+
+            <div class="feature-card dark-card">
+                <div class="card-text">
+                    <h3>Унікальні фракції<br><span class="text-gray"></span></h3>
+                </div>
+                <div class="card-img-wrapper">
+                    <img src="./KVENTI GTA — Гра про Україну_files/gunman.png" alt="GTA Servers" class="card-img">
+                </div>
+            </div>
+
+            <div class="feature-card dark-card">
+                <div class="card-text">
+                    <h3><span class="text-gray">Оптимізація</span></h3>
+                </div>
+                <div class="card-img-wrapper">
+                    <img src="./KVENTI GTA — Гра про Україну_files/mic.png" alt="Voice Chat" class="card-img">
+                </div>
+            </div>
+
+            <div class="feature-card red-card">
+                <a href="https://alhharptest.netlify.app/#download" class="download-trigger">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16ZM6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V15H6V18H18V15H20V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6Z" fill="white"></path>
+                    </svg>
+                    <span>Завантажити гру</span>
+                </a>
+                
+                <div class="play-button-wrapper">
+                    <div class="play-inner">
+                        <div class="play-triangle"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+            <div class="about-grid">
+                <div class="about-card" data-aos="fade-up" data-aos-delay="100" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="card-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3>Реалістичний світ</h3>
+                    <p>Детально пророблені українські міста з упізнаваними локаціями</p>
+                </div>
+                
+                <div class="about-card" data-aos="fade-up" data-aos-delay="200" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Активна спільнота</h3>
+                    <p>Багато зареєстрованих гравців і рп на вищому рівні</p>
+                </div>
+                
+                <div class="about-card" data-aos="fade-up" data-aos-delay="300" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="card-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Унікальні системи</h3>
+                    <p>Власні розробки: фракції, роботи та розваги</p>
+                </div>
+                
+                <div class="about-card" data-aos="fade-up" data-aos-delay="400" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="card-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Підтримка</h3>
+                    <p>Технічна пітримка в телеграмі готова допомогти вам з будь якіми проблемами</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Можливості</div>
+                <h2 class="section-title">Що тебе чекає в грі?</h2>
+            </div>
+            
+            <div class="features-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="jobs">Роботи</button>
+                    <button class="tab-btn" data-tab="factions">Фракції</button>
+                    <button class="tab-btn" data-tab="business">Бізнес</button>
+                    <button class="tab-btn" data-tab="entertainment">Розваги</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-panel active" id="jobs">
+                        <div class="feature-showcase">
+                            <div class="showcase-image">
+                                <img src="./KVENTI GTA — Гра про Україну_files/work.png" alt="Роботи">
+                            </div>
+                            <div class="showcase-content">
+                                <h3>Різноманітні професії</h3>
+                                <p>Обери роботу до душі: від таксиста до бізнесмена. Кожна професія має свої особливості та можливості заробітку.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> 10+ різних професій</li>
+                                    <li><i class="fas fa-check"></i> Різні зарплати для кожної професії</li>
+                                    <li><i class="fas fa-check"></i> Унікальні завдання для кожної роботи</li>
+                                    <li><i class="fas fa-check"></i> Можливість зміни професії</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="factions">
+                        <div class="feature-showcase">
+                            <div class="showcase-image">
+                                <img src="./KVENTI GTA — Гра про Україну_files/fraction.png" alt="Фракції">
+                            </div>
+                            <div class="showcase-content">
+                                <h3>Система фракцій</h3>
+                                <p>Приєднуйся до однієї з фракцій і бері участь у захопливих війнах за території та вплив.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> 8+ унікальних фракцій</li>
+                                    <li><i class="fas fa-check"></i> Система рангів і привілеїв</li>
+                                    <li><i class="fas fa-check"></i> Іерархія в кожній фракції</li>
+                                    <li><i class="fas fa-check"></i> Фракційні завдання</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="business">
+                        <div class="feature-showcase">
+                            <div class="showcase-image">
+                                <img src="./KVENTI GTA — Гра про Україну_files/biznes.png" alt="Бізнес">
+                            </div>
+                            <div class="showcase-content">
+                                <h3>Бізнеси</h3>
+                                <p>Купи свій бізнес який буде тобі приносит:</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Стабільний дохід</li>
+                                    <li><i class="fas fa-check"></i> Різні види бізнесу</li>
+                                    <li><i class="fas fa-check"></i> Система інвестицій</li>
+                                    <li><i class="fas fa-check"></i> Управління бізнесом</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="entertainment">
+                        <div class="feature-showcase">
+                            <div class="showcase-image">
+                                <div class="entertainment-slider">
+                                    <div class="slider-container">
+                                        <div class="slide active">
+                                            <img src="./KVENTI GTA — Гра про Україну_files/slide1.webp" alt="Дослідження світу">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="./KVENTI GTA — Гра про Україну_files/slide2.webp" alt="Пригоди">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="./KVENTI GTA — Гра про Україну_files/slide3.webp" alt="Відкриття">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="./KVENTI GTA — Гра про Україну_files/slide1(1).webp" alt="Розваги">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="./KVENTI GTA — Гра про Україну_files/slide2(1).webp" alt="Події">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="./KVENTI GTA — Гра про Україну_files/slide3(1).webp" alt="Турніри">
+                                        </div>
+                                    </div>
+                                    <div class="slider-controls">
+                                        <button class="slider-btn prev" onclick="changeSlide(-1)">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next" onclick="changeSlide(1)">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="slider-dots">
+                                        <span class="dot active" onclick="currentSlide(1)"></span>
+                                        <span class="dot" onclick="currentSlide(2)"></span>
+                                        <span class="dot" onclick="currentSlide(3)"></span>
+                                        <span class="dot" onclick="currentSlide(4)"></span>
+                                        <span class="dot" onclick="currentSlide(5)"></span>
+                                        <span class="dot" onclick="currentSlide(6)"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase-content">
+                                <h3>Розваги</h3>
+                                <p>Відпочивай і розважайся: казино, гонки, турніри, події та багато іншого.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Щотижневі турніри</li>
+                                    <li><i class="fas fa-check"></i> Казино та азартні ігри</li>
+                                    <li><i class="fas fa-check"></i> Автогонки та дрифт</li>
+                                    <li><i class="fas fa-check"></i> Святкові події</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news" id="news">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Новини</div>
+                <h2 class="section-title">Останні оновлення</h2>
+            </div>
+            
+            <div class="news-grid">
+                <article class="news-card featured" data-aos="fade-up" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="news-image">
+                        <img src="./KVENTI GTA — Гра про Україну_files/news1.webp" alt="Нове оновлення">
+                        <div class="news-badge">Важливо</div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">хх.04.2026</span>
+                            <span class="news-category">Відкриття</span>
+                        </div>
+                        <h3>Відкриття нашого 1 серверу</h3>
+                        <p>Нові локації, покращена графіка, додаткові можливості для гравців і не тільки.</p>
+                        <a href="https://alhharptest.netlify.app/#" class="news-link">Читати далі</a>
+                    </div>
+                </article>
+                
+                <article class="news-card" data-aos="fade-up" data-aos-delay="100" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="news-image">
+                        <img src="./KVENTI GTA — Гра про Україну_files/news2.webp" alt="Турнір">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">хх.04.2026</span>
+                            <span class="news-category">Оновлення сайту</span>
+                        </div>
+                        <h3>Сайт на вищому рівні</h3>
+                        <p>Оновлення на сайті в особистому кабінеті та на форумі.</p>
+                        <a href="https://alhharptest.netlify.app/#" class="news-link">Читати далі</a>
+                    </div>
+                </article>
+                
+                <article class="news-card" data-aos="fade-up" data-aos-delay="200" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="news-image">
+                        <img src="./KVENTI GTA — Гра про Україну_files/news3.webp" alt="Нові можливості">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">хх.04.2026</span>
+                            <span class="news-category">Збільшення можливостей в лаунчері</span>
+                        </div>
+                        <h3>Нові функції</h3>
+                        <p>Додано нові функції в налаштуваннях лаунчеру.</p>
+                        <a href="https://alhharptest.netlify.app/#" class="news-link">Читати далі</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="download" id="download">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-left">
+                    <div class="section-badge">Завантажити</div>
+                    <h2 class="section-title">Почни грати вже зараз</h2>
+                    <p class="section-description">
+                        Завантаж лаунчер гри та приєднуйся до тисяч гравців у захопливому світі KVENTI GTA
+                    </p>
+                    
+                    <div class="download-features">
+                        <div class="download-feature">
+                            <i class="fas fa-download"></i>
+                            <span>Швидке встановлення</span>
+                        </div>
+                        <div class="download-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Безпечно й надійно</span>
+                        </div>
+                        <div class="download-feature">
+                            <i class="fas fa-sync"></i>
+                            <span>Автоматичні оновлення</span>
+                        </div>
+                    </div>
+                    
+                    <div class="download-actions">
+                        <a href="https://alhharptest.netlify.app/#" class="btn btn-primary btn-large download-btn">
+                            <i class="fas fa-download"></i>
+                            <span>Завантажити клієнт</span>
+                            <small>Windows 10/11</small>
+                        </a>
+                        <div class="download-info">
+                            <span>Розмір: Скоро</span>
+                            <span>Версія: Скоро</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="download-right">
+                    <div class="system-requirements">
+                        <h3>Системні вимоги</h3>
+                        <div class="requirements-tabs">
+                            <button class="req-tab active" data-req="min">Мінімальні</button>
+                            <button class="req-tab" data-req="rec">Рекомендовані</button>
+                        </div>
+                        <div class="requirements-content">
+                            <div class="req-panel active" id="min">
+                                <div class="req-item">
+                                    <span class="req-label">ОС:</span>
+                                    <span class="req-value">Windows 10</span>
+                                </div>
+                                <div class="req-item">
+                                    <span class="req-label">Процесор:</span>
+                                    <span class="req-value">Intel Core i3 / AMD FX-6300</span>
+                                </div>
+                                <div class="req-item">
+                                    <span class="req-label">Пам’ять:</span>
+                                    <span class="req-value">4 ГБ ОЗУ</span>
+                                </div>
+                                <div class="req-item">
+                                    <span class="req-label">Відеокарта:</span>
+                                    <span class="req-value">GTX 750 Ti / RX 460</span>
+                                </div>
+                                <div class="req-item">
+                                    <span class="req-label">Місце на диску:</span>
+                                    <span class="req-value">10 ГБ</span>
+                                </div>
+                            </div>
+                            <div class="req-panel" id="rec">
+                                <div class="req-item">
+                                    <span class="req-label">ОС:</span>
+                                    <span class="req-value">Windows 11</span>
+                                </div>
+                                <div class="req-item">
+                                    <span class="req-label">Процесор:</span>
+                                    <span class="req-value">Intel Core i5 / AMD Ryzen 5</span>
+                                </div>
+                                <div class="req-item">
+                                    <span class="req-label">Пам’ять:</span>
+                                    <span class="req-value">8 ГБ ОЗУ</span>
+                                </div>
+                                <div class="req-item">
+                                    <span class="req-label">Відеокарта:</span>
+                                    <span class="req-value">GTX 1060 / RX 580</span>
+                                </div>
+                                <div class="req-item">
+                                    <span class="req-label">Місце на диску:</span>
+                                    <span class="req-value">10 ГБ SSD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <div class="container footer-wrapper">
+        
+        <div class="footer-info">
+            <img src="./KVENTI GTA — Гра про Україну_files/logo.webp" alt="KVENTI GTA" class="footer-logo-img">
+            <div class="footer-legal-text">
+                Проєкт «KVENTI GTA»<br>
+                Усі права захищено © 2026
+            </div>
+        </div>
+
+        <div class="footer-nav-container">
+            <div class="footer-nav-col">
+                <h4>ГРАВЦЯМ</h4>
+                <a href="https://alhharptest.netlify.app/index.php#download">Почати грати</a>
+                <a href="https://alhharptest.netlify.app/donate/donate.php">Поповнити рахунок</a>
+                <a href="https://forum-krutow-rp.pp.ua/index.php">Форум</a>
+            </div>
+
+            <div class="footer-nav-col">
+                <h4>ВАЖЛИВА ІНФОРМАЦІЯ</h4>
+                <a href="https://alhharptest.netlify.app/terms/">Угода користувача</a>
+                <a href="https://alhharptest.netlify.app/offert/">Правила користування</a>
+                <a href="https://alhharptest.netlify.app/privacy/">Політика конфіденційності</a>
+            </div>
+
+            <div class="footer-nav-col">
+                <h4>КОНТАКТИ</h4>
+                <span>Підтримка в Discord</span>
+                <a href="mailto:support@krutow-rp.pp.ua" class="footer-email">support@krutow-rp.pp.ua</a>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <div class="payment-methods-row">
+                <div class="pay-badge">VISA</div>
+                <div class="pay-badge">MC</div>
+                <div class="pay-badge">Privat24</div>
+                <div class="pay-badge">Mono</div>
+            </div>
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span>Сервери KVENTI GTA Вимкниний</span>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <div class="cookie-notice" id="cookieNotice">
+        <div class="cookie-content">
+            <div class="cookie-icon">
+                <i class="fas fa-cookie-bite"></i>
+            </div>
+            <div class="cookie-text">
+                <span>Мы используем cookie</span>
+                <p>для улучшения работы сайта и персонализации контента</p>
+            </div>
+            <button class="cookie-btn" id="acceptCookies">OK</button>
+        </div>
+    </div>
+
+    <script src="./KVENTI GTA — Гра про Україну_files/jquery-1.12.4.min.js.завантаження"></script>
+    <script src="./KVENTI GTA — Гра про Україну_files/parallax_v_4.js.завантаження"></script>
+    <script src="./KVENTI GTA — Гра про Україну_files/fm.revealator.jquery.min_v_4.js.завантаження"></script>
+    <script src="./KVENTI GTA — Гра про Україну_files/main.js.завантаження"></script>
+
+    <script>
+        
+        // Блокування Ctrl+U
+        document.addEventListener("keydown", function(e) {
+            if (e.ctrlKey && e.key.toLowerCase() === "u") {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                return false;
+            }
+        }, true);
+
+        // Блокування правої кнопки миші
+        document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+        });
+
+        // Блокування Ctrl+S
+        document.addEventListener("keydown", function(e) {
+            if (e.ctrlKey && e.key.toLowerCase() === "s") {
+                e.preventDefault();
+            }
+        }, true);
+    </script>
+
+</body></html>
